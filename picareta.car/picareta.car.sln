@@ -3,9 +3,42 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 -Operacao", "2 -Operacao", "{AC5F5740-BD5E-4FD6-80A7-E11AECD24AC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 -Vendas", "3 -Vendas", "{767B69C6-B2D8-4D60-91BD-A2AC2F160735}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- Administracao", "1- Administracao", "{DD940B26-1D69-4BF2-8321-A5C8DC385449}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5620B95D-B486-422F-9EFA-BA22AD84769F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.Picareta", "Administracao\src\admin.picareta\Admin.Picareta.csproj", "{0ED0585A-0855-4BF4-88A4-E70CBB1553CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4- Core", "4- Core", "{B4E9D375-0522-489B-BC95-6C190E40CDF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Picareta", "Core\src\core.picareta\Core.Picareta.csproj", "{A6BBF757-EDF9-4063-96DC-4A51CCA4FAAD}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0ED0585A-0855-4BF4-88A4-E70CBB1553CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED0585A-0855-4BF4-88A4-E70CBB1553CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED0585A-0855-4BF4-88A4-E70CBB1553CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED0585A-0855-4BF4-88A4-E70CBB1553CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6BBF757-EDF9-4063-96DC-4A51CCA4FAAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6BBF757-EDF9-4063-96DC-4A51CCA4FAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6BBF757-EDF9-4063-96DC-4A51CCA4FAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6BBF757-EDF9-4063-96DC-4A51CCA4FAAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5620B95D-B486-422F-9EFA-BA22AD84769F} = {DD940B26-1D69-4BF2-8321-A5C8DC385449}
+		{0ED0585A-0855-4BF4-88A4-E70CBB1553CF} = {5620B95D-B486-422F-9EFA-BA22AD84769F}
+		{A6BBF757-EDF9-4063-96DC-4A51CCA4FAAD} = {B4E9D375-0522-489B-BC95-6C190E40CDF8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D345251D-7331-4C2F-9835-2090E37210B1}
