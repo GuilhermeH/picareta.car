@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\src\core.picareta\Core.Picareta.csproj" />
+  </ItemGroup>
+
 </Project>

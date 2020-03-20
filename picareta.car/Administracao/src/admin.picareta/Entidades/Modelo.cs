@@ -1,9 +1,9 @@
 ﻿using Core.picareta.DomainObjects;
-using System;
+using Core.Picareta.DomainObjects;
 
 namespace Admin.Picareta.Entidades
 {
-    public class Modelo : Entity
+    public class Modelo : Entity, IAggregateRoot
     {
         public Modelo(string nome, decimal valorMinimo, decimal valorMaximo)
         {
