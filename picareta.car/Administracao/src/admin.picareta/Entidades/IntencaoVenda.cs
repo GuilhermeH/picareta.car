@@ -22,32 +22,47 @@ namespace Admin.Picareta.Entidades
         {
             if (carro.Valor <= carro.Modelo.ValorMaximo || carro.Valor >= carro.Modelo.ValorMinimo)
             {
-                AprovarAutomaticamente();
+                RegistrarAprovacaoAutomatica();
+            }
+            else
+            {
+                EnviarParaAprovacaoManual();
             }
         }
 
-        public void Aprovar()
-        {
-            Status = EStatusIntencaoVenda.Aprovado;
-            DataRevisao = DateTime.Now;
-        }
+       
 
-        public void AprovarAutomaticamente()
+        private void RegistrarAprovacaoAutomatica()
         {
             ModoAprovacao = EModoAprovacao.Automatico;
             Aprovar();
         }
 
-        public void AprovarManualmente()
+        public void RegistarReprovacao()
+        {
+            Status = EStatusIntencaoVenda.Reprovado;
+        }
+
+        public void RegistarAprovacaoManual()
         {
             ModoAprovacao = EModoAprovacao.Manual;
             Aprovar();
         }
 
-        public void Reprovar()
+        #region Private Methods
+
+        private void Aprovar()
         {
-            Status = EStatusIntencaoVenda.Reprovado;
+            Status = EStatusIntencaoVenda.Aprovado;
+            DataRevisao = DateTime.Now;
         }
+
+        private void EnviarParaAprovacaoManual()
+        {
+            ModoAprovacao = EModoAprovacao.Manual;
+        }
+
+        #endregion
     }
 
    
