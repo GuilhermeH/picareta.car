@@ -97,6 +97,7 @@ namespace Admin.Picareta.Tests
             var carro = new Carro(Guid.NewGuid(), "Azul", 13000, modelo);
 
 
+
             //Act
             var intencaoVenda = new IntencaoVenda(carro);
             intencaoVenda.RegistarAprovacaoManual();
