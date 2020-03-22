@@ -10,7 +10,7 @@ namespace Admin.Picareta.Entidades
     {
         public IntencaoVenda(Carro carro)
         {
-            Status = EStatusIntencaoVenda.AguardandoAvaliacao;
+            Status = EStatusIntencaoVenda.AguardandoRevisao;
             Revisar(carro);
         }
         public EStatusIntencaoVenda Status { get; private set; }
@@ -18,20 +18,7 @@ namespace Admin.Picareta.Entidades
         public DateTime DataRevisao { get; private set; }
         public Carro Carro { get; private set; }
 
-        public void Revisar(Carro carro)
-        {
-            if (carro.Valor <= carro.Modelo.ValorMaximo || carro.Valor >= carro.Modelo.ValorMinimo)
-            {
-                RegistrarAprovacaoAutomatica();
-            }
-            else
-            {
-                EnviarParaAprovacaoManual();
-            }
-        }
-
        
-
         private void RegistrarAprovacaoAutomatica()
         {
             ModoAprovacao = EModoAprovacao.Automatico;
@@ -40,7 +27,7 @@ namespace Admin.Picareta.Entidades
 
         public void RegistarReprovacao()
         {
-            Status = EStatusIntencaoVenda.Reprovado;
+            Reprovar();
         }
 
         public void RegistarAprovacaoManual()
@@ -51,9 +38,27 @@ namespace Admin.Picareta.Entidades
 
         #region Private Methods
 
+        private void Revisar(Carro carro)
+        {
+            if (carro.Valor <= carro.Modelo.ValorMaximo && carro.Valor >= carro.Modelo.ValorMinimo)
+            {
+                RegistrarAprovacaoAutomatica();
+            }
+            else
+            {
+                EnviarParaAprovacaoManual();
+            }
+        }
+
         private void Aprovar()
         {
             Status = EStatusIntencaoVenda.Aprovado;
+            DataRevisao = DateTime.Now;
+        }
+
+        private void Reprovar()
+        {
+            Status = EStatusIntencaoVenda.Reprovado;
             DataRevisao = DateTime.Now;
         }
 

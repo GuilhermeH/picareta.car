@@ -11,11 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- Administracao", "1- Admi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5620B95D-B486-422F-9EFA-BA22AD84769F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.Picareta", "Administracao\src\admin.picareta\Admin.Picareta.csproj", "{0ED0585A-0855-4BF4-88A4-E70CBB1553CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin.Picareta", "Administracao\src\admin.picareta\Admin.Picareta.csproj", "{0ED0585A-0855-4BF4-88A4-E70CBB1553CF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4- Core", "4- Core", "{B4E9D375-0522-489B-BC95-6C190E40CDF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Picareta", "Core\src\core.picareta\Core.Picareta.csproj", "{A6BBF757-EDF9-4063-96DC-4A51CCA4FAAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Picareta", "Core\src\core.picareta\Core.Picareta.csproj", "{A6BBF757-EDF9-4063-96DC-4A51CCA4FAAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{57BCD28C-7ACB-4A54-A1D4-66802B4820ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.Picareta.Tests", "..\tests\Admin.Picareta.Tests\Admin.Picareta.Tests.csproj", "{4F545152-94BD-484D-9EED-D793689CAF2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,10 @@ Global
 		{A6BBF757-EDF9-4063-96DC-4A51CCA4FAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6BBF757-EDF9-4063-96DC-4A51CCA4FAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6BBF757-EDF9-4063-96DC-4A51CCA4FAAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F545152-94BD-484D-9EED-D793689CAF2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F545152-94BD-484D-9EED-D793689CAF2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F545152-94BD-484D-9EED-D793689CAF2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F545152-94BD-484D-9EED-D793689CAF2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +47,8 @@ Global
 		{5620B95D-B486-422F-9EFA-BA22AD84769F} = {DD940B26-1D69-4BF2-8321-A5C8DC385449}
 		{0ED0585A-0855-4BF4-88A4-E70CBB1553CF} = {5620B95D-B486-422F-9EFA-BA22AD84769F}
 		{A6BBF757-EDF9-4063-96DC-4A51CCA4FAAD} = {B4E9D375-0522-489B-BC95-6C190E40CDF8}
+		{57BCD28C-7ACB-4A54-A1D4-66802B4820ED} = {5620B95D-B486-422F-9EFA-BA22AD84769F}
+		{4F545152-94BD-484D-9EED-D793689CAF2D} = {57BCD28C-7ACB-4A54-A1D4-66802B4820ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D345251D-7331-4C2F-9835-2090E37210B1}

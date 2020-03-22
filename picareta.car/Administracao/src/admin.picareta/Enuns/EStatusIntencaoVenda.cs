@@ -2,7 +2,7 @@
 {
     public enum EStatusIntencaoVenda
     {
-        AguardandoAvaliacao = 0,
+        AguardandoRevisao = 0,
         Aprovado = 1,
         Reprovado = 2
     }
