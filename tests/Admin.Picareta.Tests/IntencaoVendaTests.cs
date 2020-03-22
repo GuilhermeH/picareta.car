@@ -2,13 +2,13 @@ using Admin.Picareta.Entidades;
 using Admin.Picareta.Enuns;
 using Admin.Picareta.ValueObjects;
 using System;
-using System.ComponentModel;
 using Xunit;
 
 namespace Admin.Picareta.Tests
 {
     public class IntencaoVendaTests
     {
+
         [Trait("Entidade","IntencaoVenda")]
         [Fact]
         public void ValorAbaixoDoMinimo_DeveEnviarParaAnaliseManual()
@@ -22,6 +22,8 @@ namespace Admin.Picareta.Tests
             var intencaoVenda = new IntencaoVenda(carro);
 
             //Assert
+            Assert.Null(intencaoVenda.DataRevisao);
+            Assert.False(intencaoVenda.Revisado);
             Assert.Equal(EStatusIntencaoVenda.AguardandoRevisao, intencaoVenda.Status);
             Assert.Equal(EModoAprovacao.Manual, intencaoVenda.ModoAprovacao);
         }
@@ -39,6 +41,8 @@ namespace Admin.Picareta.Tests
             var intencaoVenda = new IntencaoVenda(carro);
 
             //Assert
+            Assert.Null(intencaoVenda.DataRevisao);
+            Assert.False(intencaoVenda.Revisado);
             Assert.Equal(EStatusIntencaoVenda.AguardandoRevisao, intencaoVenda.Status);
             Assert.Equal(EModoAprovacao.Manual, intencaoVenda.ModoAprovacao);
         }
@@ -56,6 +60,8 @@ namespace Admin.Picareta.Tests
             var intencaoVenda = new IntencaoVenda(carro);
 
             //Assert
+            Assert.NotNull(intencaoVenda.DataRevisao);
+            Assert.True(intencaoVenda.Revisado);
             Assert.Equal(EStatusIntencaoVenda.Aprovado, intencaoVenda.Status);
             Assert.Equal(EModoAprovacao.Automatico, intencaoVenda.ModoAprovacao);
         }
@@ -75,6 +81,8 @@ namespace Admin.Picareta.Tests
             intencaoVenda.RegistarReprovacao();
 
             //Assert
+            Assert.NotNull(intencaoVenda.DataRevisao);
+            Assert.True(intencaoVenda.Revisado);
             Assert.Equal(EModoAprovacao.Manual, intencaoVenda.ModoAprovacao);
             Assert.Equal(EStatusIntencaoVenda.Reprovado, intencaoVenda.Status);
             
@@ -94,6 +102,8 @@ namespace Admin.Picareta.Tests
             intencaoVenda.RegistarAprovacaoManual();
 
             //Assert
+            Assert.NotNull(intencaoVenda.DataRevisao);
+            Assert.True(intencaoVenda.Revisado);
             Assert.Equal(EModoAprovacao.Manual, intencaoVenda.ModoAprovacao);
             Assert.Equal(EStatusIntencaoVenda.Aprovado, intencaoVenda.Status);
 

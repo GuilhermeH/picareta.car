@@ -15,16 +15,10 @@ namespace Admin.Picareta.Entidades
         }
         public EStatusIntencaoVenda Status { get; private set; }
         public EModoAprovacao ModoAprovacao { get; private set; }
-        public DateTime DataRevisao { get; private set; }
+        public DateTime? DataRevisao { get; private set; }
+        public bool Revisado { get; set; }
         public Carro Carro { get; private set; }
-
        
-        private void RegistrarAprovacaoAutomatica()
-        {
-            ModoAprovacao = EModoAprovacao.Automatico;
-            Aprovar();
-        }
-
         public void RegistarReprovacao()
         {
             Reprovar();
@@ -37,6 +31,12 @@ namespace Admin.Picareta.Entidades
         }
 
         #region Private Methods
+
+        private void RegistrarAprovacaoAutomatica()
+        {
+            ModoAprovacao = EModoAprovacao.Automatico;
+            Aprovar();
+        }
 
         private void Revisar(Carro carro)
         {
@@ -52,18 +52,21 @@ namespace Admin.Picareta.Entidades
 
         private void Aprovar()
         {
+            Revisado = true;
             Status = EStatusIntencaoVenda.Aprovado;
             DataRevisao = DateTime.Now;
         }
 
         private void Reprovar()
         {
+            Revisado = true;
             Status = EStatusIntencaoVenda.Reprovado;
             DataRevisao = DateTime.Now;
         }
 
         private void EnviarParaAprovacaoManual()
         {
+            Revisado = false;
             ModoAprovacao = EModoAprovacao.Manual;
         }
 
