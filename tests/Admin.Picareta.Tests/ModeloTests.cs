@@ -14,9 +14,10 @@ namespace Admin.Picareta.Tests
             var nomeModelo = "Gol";
 
             //Act    
-            var modelo = new Modelo(nomeModelo, 10000, 15000);
+            var modelo = new Modelo(nomeModelo, 10000, 13000);
 
             //Assert
+            //Assert.True(modelo.Validation.IsValid);
             Assert.True(true);
         }
 

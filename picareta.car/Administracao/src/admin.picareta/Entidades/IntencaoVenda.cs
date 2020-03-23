@@ -2,6 +2,7 @@
 using Admin.Picareta.ValueObjects;
 using Core.picareta.DomainObjects;
 using Core.Picareta.DomainObjects;
+using FluentValidation;
 using System;
 
 namespace Admin.Picareta.Entidades
