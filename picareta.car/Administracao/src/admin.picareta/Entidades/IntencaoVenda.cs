@@ -1,4 +1,5 @@
-﻿using Admin.Picareta.Enuns;
+﻿using Admin.Picareta.Commands;
+using Admin.Picareta.Enuns;
 using Admin.Picareta.ValueObjects;
 using Core.picareta.DomainObjects;
 using Core.Picareta.DomainObjects;
@@ -37,6 +38,8 @@ namespace Admin.Picareta.Entidades
         {
             ModoAprovacao = EModoAprovacao.Automatico;
             Aprovar();
+            //repensar isso aqui -talvez não seja o local correto.
+            new EnviarCarroParaVendasCommand(Carro.CarroId, Carro.Cor, Carro.Valor, Carro.Modelo.Nome);
         }
 
         private void Revisar(Carro carro)
