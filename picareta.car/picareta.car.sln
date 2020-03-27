@@ -3,25 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 -Operacao", "2 -Operacao", "{AC5F5740-BD5E-4FD6-80A7-E11AECD24AC6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Operacao", "2 - Operacao", "{AC5F5740-BD5E-4FD6-80A7-E11AECD24AC6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 -Vendas", "3 -Vendas", "{767B69C6-B2D8-4D60-91BD-A2AC2F160735}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Vendas", "3 - Vendas", "{767B69C6-B2D8-4D60-91BD-A2AC2F160735}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- Administracao", "1- Administracao", "{DD940B26-1D69-4BF2-8321-A5C8DC385449}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Administracao", "1 - Administracao", "{DD940B26-1D69-4BF2-8321-A5C8DC385449}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5620B95D-B486-422F-9EFA-BA22AD84769F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin.Picareta", "Administracao\src\admin.picareta\Admin.Picareta.csproj", "{0ED0585A-0855-4BF4-88A4-E70CBB1553CF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4- Core", "4- Core", "{B4E9D375-0522-489B-BC95-6C190E40CDF8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Core", "4 - Core", "{B4E9D375-0522-489B-BC95-6C190E40CDF8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Picareta", "Core\src\core.picareta\Core.Picareta.csproj", "{A6BBF757-EDF9-4063-96DC-4A51CCA4FAAD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{57BCD28C-7ACB-4A54-A1D4-66802B4820ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.Picareta.Tests", "..\tests\Admin.Picareta.Tests\Admin.Picareta.Tests.csproj", "{4F545152-94BD-484D-9EED-D793689CAF2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin.Picareta.Tests", "..\tests\Admin.Picareta.Tests\Admin.Picareta.Tests.csproj", "{4F545152-94BD-484D-9EED-D793689CAF2D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{6C1DF60A-7727-407B-929E-F6EE76DB3311}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Apps", "0 - Apps", "{0E23702C-728A-43BA-B563-7AC1925A5641}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,5 +1,4 @@
-﻿using FluentValidation;
-using FluentValidation.Results;
+﻿using FluentValidation.Results;
 using MediatR;
 using System;
 
@@ -14,9 +13,9 @@ namespace Core.Picareta.DomainObjects
         public DateTime TimesTamp { get; set; }
         public ValidationResult ValidationResult { get; set; }
 
-        public virtual bool IsValid(ValidationResult validationResult)
+        public virtual bool IsValid()
         {
-            return validationResult.IsValid;
+            throw new NotImplementedException();
         }
     }
 }

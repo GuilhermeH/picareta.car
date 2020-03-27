@@ -1,4 +1,5 @@
 ﻿using Admin.Picareta.Commands;
+using Admin.Picareta.Entidades.Events.IntegrationEvents;
 using Admin.Picareta.Enuns;
 using Admin.Picareta.ValueObjects;
 using Core.picareta.DomainObjects;
@@ -10,10 +11,11 @@ namespace Admin.Picareta.Entidades
 {
     public class IntencaoVenda : Entity, IAggregateRoot
     {
-        public IntencaoVenda(Carro carro)
+        public IntencaoVenda(Carro carro, Modelo modelo)
         {
             Status = EStatusIntencaoVenda.AguardandoRevisao;
-            Revisar(carro);
+            Carro = carro;
+            Revisar(carro, modelo);
         }
         public EStatusIntencaoVenda Status { get; private set; }
         public EModoAprovacao ModoAprovacao { get; private set; }
@@ -38,13 +40,12 @@ namespace Admin.Picareta.Entidades
         {
             ModoAprovacao = EModoAprovacao.Automatico;
             Aprovar();
-            //repensar isso aqui -talvez não seja o local correto.
-            new EnviarCarroParaVendasCommand(Carro.CarroId, Carro.Cor, Carro.Valor, Carro.Modelo.Nome);
+            AdicionarEvento(new EnviarCarroParaVendasEvent());
         }
 
-        private void Revisar(Carro carro)
+        private void Revisar(Carro carro, Modelo modelo)
         {
-            if (carro.Valor <= carro.Modelo.ValorMaximo && carro.Valor >= carro.Modelo.ValorMinimo)
+            if (carro.Valor <= modelo.ValorMaximo && carro.Valor >= modelo.ValorMinimo)
             {
                 RegistrarAprovacaoAutomatica();
             }
