@@ -21,6 +21,7 @@ Context Admin
  - sistema receberá uma intenção de venda, o valor do carro deve estar entre o valor minimo e o máximo do modelo para ser aprovado automaticamente, 
 caso não esteja será enviado para analise do adminstrador
  - o sistema deverá disponibilizar uma lista de carros pendentes de aprovação
+ - o administrador pode aprovar ou reprovar a intencao de venda
  - após aprovação o carro deverá ficar disponpivel no contexto de vendas 
  - em caso de reprovação, o administrador insere um motivo e o vendedor deverá ser notificado 
  - poderá cadastrar modelos de carros, nesse cadastro deverá ser informado valor minimo e máximo permitido para o modelo.

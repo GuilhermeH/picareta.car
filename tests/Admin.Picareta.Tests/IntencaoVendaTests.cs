@@ -15,11 +15,11 @@ namespace Admin.Picareta.Tests
         {
             //Arrange
             var modelo = new Modelo("Marea", 8000, 12000);
-            var carro = new Carro(Guid.NewGuid(), "Azul", 7000, modelo);
+            var carro = new Carro("Azul", 7000, modelo);
 
 
             //Act
-            var intencaoVenda = new IntencaoVenda(carro);
+            var intencaoVenda = new IntencaoVenda(carro, modelo);
 
             //Assert
             Assert.Null(intencaoVenda.DataRevisao);
@@ -30,15 +30,15 @@ namespace Admin.Picareta.Tests
 
         [Trait("Entidade", "IntencaoVenda")]
         [Fact]
-        public void ValorMaiorDoMAximo_DeveEnviarParaAnaliseManual()
+        public void ValorMaiorDoMaximo_DeveEnviarParaAnaliseManual()
         {
             //Arrange
             var modelo = new Modelo("Marea", 8000, 12000);
-            var carro = new Carro(Guid.NewGuid(), "Azul", 13000, modelo);
+            var carro = new Carro("Azul", 13000, modelo);
 
 
             //Act
-            var intencaoVenda = new IntencaoVenda(carro);
+            var intencaoVenda = new IntencaoVenda(carro, modelo);
 
             //Assert
             Assert.Null(intencaoVenda.DataRevisao);
@@ -53,11 +53,11 @@ namespace Admin.Picareta.Tests
         {
             //Arrange
             var modelo = new Modelo("Marea", 8000, 12000);
-            var carro = new Carro(Guid.NewGuid(), "Azul", 11000, modelo);
+            var carro = new Carro("Azul", 11000, modelo);
 
 
             //Act
-            var intencaoVenda = new IntencaoVenda(carro);
+            var intencaoVenda = new IntencaoVenda(carro, modelo);
 
             //Assert
             Assert.NotNull(intencaoVenda.DataRevisao);
@@ -73,11 +73,11 @@ namespace Admin.Picareta.Tests
 
             //Arrange
             var modelo = new Modelo("Marea", 8000, 12000);
-            var carro = new Carro(Guid.NewGuid(), "Azul", 13000, modelo);
+            var carro = new Carro("Azul", 13000, modelo);
 
 
             //Act
-            var intencaoVenda = new IntencaoVenda(carro);
+            var intencaoVenda = new IntencaoVenda(carro, modelo);
             intencaoVenda.RegistarReprovacao();
 
             //Assert
@@ -94,12 +94,12 @@ namespace Admin.Picareta.Tests
         {
             //Arrange
             var modelo = new Modelo("Marea", 8000, 12000);
-            var carro = new Carro(Guid.NewGuid(), "Azul", 13000, modelo);
+            var carro = new Carro("Azul", 13000, modelo);
 
 
 
             //Act
-            var intencaoVenda = new IntencaoVenda(carro);
+            var intencaoVenda = new IntencaoVenda(carro, modelo);
             intencaoVenda.RegistarAprovacaoManual();
 
             //Assert
