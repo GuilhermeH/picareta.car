@@ -1,4 +1,5 @@
 ﻿using Core.Picareta.DomainObjects;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 
@@ -33,8 +34,10 @@ namespace Core.picareta.DomainObjects
 
         public virtual bool IsValid()
         {
-            throw new NotImplementedException();
+            return ValidationResult.IsValid;
         }
+
+        public ValidationResult ValidationResult { get; set; }
 
     }
 }

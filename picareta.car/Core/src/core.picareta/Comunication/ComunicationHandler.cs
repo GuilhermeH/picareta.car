@@ -17,6 +17,11 @@ namespace Core.Picareta.Comunication
             return await _mediator.Send(comando);
         }
 
+        public Task PublicarDomainNotification<T>(T notification) where T : DomainNotification
+        {
+            return _mediator.Publish(notification);
+        }
+
         public Task PublicarEvento<T>(T evento) where T : Event
         {
             return _mediator.Publish(evento);

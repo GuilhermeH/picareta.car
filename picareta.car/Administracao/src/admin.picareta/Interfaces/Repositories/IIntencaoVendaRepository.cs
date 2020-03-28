@@ -9,5 +9,6 @@ namespace Admin.Picareta.Interfaces.Repositories
     {
         IEnumerable<IntencaoVenda> GetIntencoesVendasPendentesAvaliacao();
         Modelo GetModelo(Guid modeloId);
+        void AddIntencaoVenda(IntencaoVenda intencaoVenda);
     }
 }

@@ -7,7 +7,7 @@ namespace Core.Picareta.DomainObjects
     {
         public ValidationResult ValidationResult { get; set; }
 
-        public bool IsValid()
+        public virtual bool IsValid()
         {
             throw new NotImplementedException();
         }

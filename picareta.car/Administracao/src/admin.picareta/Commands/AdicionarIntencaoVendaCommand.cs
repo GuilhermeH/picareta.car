@@ -20,6 +20,7 @@ namespace Admin.Picareta.Commands
         public override bool IsValid()
         {
             ValidationResult = new AdicionarIntencaoVendaCommandValidator().Validate(this);
+
             return ValidationResult.IsValid;
         }
     }

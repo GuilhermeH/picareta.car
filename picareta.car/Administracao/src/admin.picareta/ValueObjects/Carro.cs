@@ -1,6 +1,7 @@
 ﻿using Admin.Picareta.Entidades;
 using Admin.Picareta.Entidades.Validators;
 using Core.Picareta.DomainObjects;
+using FluentValidation.Results;
 using System;
 
 namespace Admin.Picareta.ValueObjects
@@ -12,12 +13,16 @@ namespace Admin.Picareta.ValueObjects
             Cor = cor;
             Modelo = modelo;
             Valor = valor;
-
-            ValidationResult = new CarroValidator().Validate(this);
         }
 
         public string Cor { get; private set; }
         public decimal Valor { get; private set; }
         public Modelo Modelo { get; private set; }
+
+        public override bool IsValid()
+        {
+            ValidationResult = new CarroValidator().Validate(this);
+            return ValidationResult.IsValid;
+        }
     }
 }

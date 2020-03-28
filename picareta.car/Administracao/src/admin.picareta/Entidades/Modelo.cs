@@ -11,13 +11,17 @@ namespace Admin.Picareta.Entidades
             Nome = nome;
             ValorMinimo = valorMinimo;
             ValorMaximo = valorMaximo;
-
-            //Validation = new ModeloValidator().Validate(this);
         }
 
         public string Nome { get; private set; }
         public decimal ValorMinimo { get; private set; }
         public decimal ValorMaximo { get; private set; }
+
+        public override bool IsValid()
+        {
+            ValidationResult = new ModeloValidator().Validate(this);
+            return ValidationResult.IsValid;
+        }
 
     }
 }

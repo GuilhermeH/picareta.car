@@ -7,5 +7,7 @@ namespace Core.Picareta.Comunication
     {
         Task PublicarEvento<T>(T evento) where T : Event;
         Task<bool> EnviarComando<T>(T comando) where T : Command;
+        Task PublicarDomainNotification<T>(T comando) where T : DomainNotification;
+
     }
 }
