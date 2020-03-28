@@ -9,7 +9,7 @@ namespace Admin.Picareta.Entidades.Validators
         {
             RuleFor(c => c.Cor)
                .NotEmpty().WithMessage("A cor do carro não foi informada")
-               .NotEmpty().WithMessage("A cor do carro não foi informada");
+               .NotNull().WithMessage("A cor do carro não foi informada");
 
             RuleFor(c => c.Valor)
                 .GreaterThan(0)

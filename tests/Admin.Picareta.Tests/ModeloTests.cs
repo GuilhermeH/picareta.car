@@ -5,20 +5,18 @@ namespace Admin.Picareta.Tests
 {
     public class ModeloTests
     {
-        //TODO: apagar teste depois
-        [Trait("Modelo", "IntencaoVenda")]
+        [Trait("Entidade", "Modelo")]
         [Fact]
-        public void NomeModelInvalidoTest()
+        public void ModeloInvalido_IsValid_DeveRetornarFalse()
         {
             //Arrange
-            var nomeModelo = "Gol";
+            var modelo = new Modelo("Gol", 10000, 600);
 
             //Act    
-            var modelo = new Modelo(nomeModelo, 10000, 13000);
+            var result = modelo.IsValid();
 
             //Assert
-            //Assert.True(modelo.Validation.IsValid);
-            Assert.True(true);
+            Assert.False(result);
         }
 
     }
