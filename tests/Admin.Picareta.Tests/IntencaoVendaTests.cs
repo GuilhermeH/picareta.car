@@ -1,7 +1,6 @@
 using Admin.Picareta.Entidades;
 using Admin.Picareta.Enuns;
 using Admin.Picareta.ValueObjects;
-using System;
 using Xunit;
 
 namespace Admin.Picareta.Tests
@@ -9,7 +8,7 @@ namespace Admin.Picareta.Tests
     public class IntencaoVendaTests
     {
 
-        [Trait("Entidade","IntencaoVenda")]
+        [Trait("Entidade", "IntencaoVenda")]
         [Fact]
         public void ValorAbaixoDoMinimo_DeveEnviarParaAnaliseManual()
         {
@@ -85,7 +84,7 @@ namespace Admin.Picareta.Tests
             Assert.True(intencaoVenda.Revisado);
             Assert.Equal(EModoAprovacao.Manual, intencaoVenda.ModoAprovacao);
             Assert.Equal(EStatusIntencaoVenda.Reprovado, intencaoVenda.Status);
-            
+
         }
 
         [Trait("Entidade", "IntencaoVenda")]

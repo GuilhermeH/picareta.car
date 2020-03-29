@@ -40,7 +40,7 @@ namespace Admin.Picareta.Entidades
         {
             ModoAprovacao = EModoAprovacao.Automatico;
             Aprovar();
-            AdicionarEvento(new EnviarCarroParaVendasEvent());
+            AdicionarEvento(new EnviarCarroParaVendasEvent(Carro.Modelo.Nome, Carro.Cor, Carro.Valor));
         }
 
         private void Revisar(Carro carro, Modelo modelo)
