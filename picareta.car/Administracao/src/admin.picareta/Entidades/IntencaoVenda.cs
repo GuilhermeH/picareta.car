@@ -22,9 +22,11 @@ namespace Admin.Picareta.Entidades
         public DateTime? DataRevisao { get; private set; }
         public bool Revisado { get; set; }
         public Carro Carro { get; private set; }
-       
-        public void RegistarReprovacao()
+        public MotivoReprovacao MotivoReprovacao { get; private set; }
+
+        public void RegistarReprovacao(string motivo)
         {
+            MotivoReprovacao = new MotivoReprovacao(motivo, Id);
             Reprovar();
         }
 

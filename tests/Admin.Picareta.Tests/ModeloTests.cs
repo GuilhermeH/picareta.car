@@ -19,5 +19,19 @@ namespace Admin.Picareta.Tests
             Assert.False(result);
         }
 
+        [Trait("Entidade", "Modelo")]
+        [Fact]
+        public void ModeloValido_IsValid_DeveRetornarTrue()
+        {
+            //Arrange
+            var modelo = new Modelo("Gol", 1000, 1600);
+
+            //Act    
+            var result = modelo.IsValid();
+
+            //Assert
+            Assert.True(result);
+        }
+
     }
 }

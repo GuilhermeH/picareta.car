@@ -10,8 +10,10 @@ namespace Core.picareta.DomainObjects
         protected Entity()
         {
             Id = Guid.NewGuid();
+            DataInclusao = DateTime.Now;
         }
         public Guid Id { get; private set; }
+        public DateTime DataInclusao { get; private set; }
 
         private List<Event> _events;
         public IReadOnlyCollection<Event> Eventos => _events?.AsReadOnly();

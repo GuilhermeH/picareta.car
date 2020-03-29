@@ -77,10 +77,12 @@ namespace Admin.Picareta.Tests
 
             //Act
             var intencaoVenda = new IntencaoVenda(carro, modelo);
-            intencaoVenda.RegistarReprovacao();
+            intencaoVenda.RegistarReprovacao("Valor abaixo do esperado");
 
             //Assert
             Assert.NotNull(intencaoVenda.DataRevisao);
+            Assert.True(intencaoVenda.MotivoReprovacao.IsValid());
+            Assert.NotNull(intencaoVenda.MotivoReprovacao);
             Assert.True(intencaoVenda.Revisado);
             Assert.Equal(EModoAprovacao.Manual, intencaoVenda.ModoAprovacao);
             Assert.Equal(EStatusIntencaoVenda.Reprovado, intencaoVenda.Status);

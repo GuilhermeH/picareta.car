@@ -6,11 +6,14 @@ namespace Admin.Picareta.Entidades.Validators
     {
         public ModeloValidator()
         {
-            RuleFor(modelo => modelo.ValorMinimo).LessThan(modelo => modelo.ValorMaximo).WithMessage("Valor minimo deve ser menor que valor máximo");
             RuleFor(modelo => modelo.Nome).NotNull().NotEmpty().WithMessage("Nome não pode ser nulo");
             RuleFor(modelo => modelo.Nome).MaximumLength(25).WithMessage("Nome do Modele deve conter no máximo 25 caracteres");
-            RuleFor(modelo => modelo.ValorMinimo).GreaterThan(0).WithMessage("Valor deve ser maior que zero");
-            RuleFor(modelo => modelo.ValorMaximo).GreaterThan(modelo => modelo.ValorMinimo).WithMessage("Valor máximo não pode ser maior que o minimo");
+            RuleFor(modelo => modelo).Custom((modelo, context) => {
+                if (modelo.ValorMaximo < modelo.ValorMinimo)
+                {
+                    context.AddFailure("Valor máximo deve ser maior que o minimo");
+                }
+            });
         }
     }
 }
