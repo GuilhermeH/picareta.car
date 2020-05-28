@@ -8,7 +8,6 @@ namespace Admin.Picareta.Interfaces.Repositories
     public interface IIntencaoVendaRepository : IRepository<IntencaoVenda>
     {
         IEnumerable<IntencaoVenda> GetIntencoesVendasPendentesAvaliacao();
-        Modelo GetModelo(Guid modeloId);
         void AddIntencaoVenda(IntencaoVenda intencaoVenda);
     }
 }

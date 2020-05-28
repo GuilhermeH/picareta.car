@@ -1,4 +1,5 @@
-﻿using Admin.Picareta.Entidades;
+﻿using Admin.Picareta.Domain.Interfaces.Repositories;
+using Admin.Picareta.Entidades;
 using Admin.Picareta.Interfaces.Repositories;
 using Admin.Picareta.ValueObjects;
 using Core.Picareta.Comunication;
@@ -13,21 +14,25 @@ namespace Admin.Picareta.Commands.Handlers
     public class IntencaoVendaCommandHandler : CommandHandlerBase, IRequestHandler<AdicionarIntencaoVendaCommand, bool>
     {
         private readonly IIntencaoVendaRepository _intencaoVendaRepository;
+        private readonly IModeloRepository _modeloRepository;
         private readonly IComunication _comunication;
 
-        public IntencaoVendaCommandHandler(IIntencaoVendaRepository intencaoVendaRepository, IComunication comunication)
-            :base(comunication)
+        public IntencaoVendaCommandHandler(IIntencaoVendaRepository intencaoVendaRepository,
+            IModeloRepository modeloRepository,
+            IComunication comunication)
+            : base(comunication)
         {
             _intencaoVendaRepository = intencaoVendaRepository;
+            _modeloRepository = modeloRepository;
             _comunication = comunication;
         }
         public async Task<bool> Handle(AdicionarIntencaoVendaCommand command, CancellationToken cancellationToken)
         {
-            if (IsValid(command))
+            if (!IsValid(command))
             {
                 return false;
             }
-            var modelo = _intencaoVendaRepository.GetModelo(command.ModeloId);
+            var modelo = _modeloRepository.GetModelo(command.ModeloId);
 
             var carro = new Carro(command.Cor, command.Valor, modelo);
             if (carro.IsValid() && modelo.IsValid())
@@ -37,7 +42,7 @@ namespace Admin.Picareta.Commands.Handlers
             }
             else
             {
-               //TODO: repensar isso aqui
+                //TODO: repensar isso aqui
                 foreach (var error in carro.ValidationResult.Errors)
                 {
                     await _comunication.PublicarDomainNotification(new DomainNotification(error.PropertyName, error.ErrorMessage));

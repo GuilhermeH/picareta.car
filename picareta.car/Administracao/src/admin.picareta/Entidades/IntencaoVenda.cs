@@ -1,10 +1,8 @@
-﻿using Admin.Picareta.Commands;
-using Admin.Picareta.Entidades.Events.IntegrationEvents;
+﻿using Admin.Picareta.Entidades.Events.IntegrationEvents;
 using Admin.Picareta.Enuns;
 using Admin.Picareta.ValueObjects;
 using Core.picareta.DomainObjects;
 using Core.Picareta.DomainObjects;
-using FluentValidation;
 using System;
 
 namespace Admin.Picareta.Entidades

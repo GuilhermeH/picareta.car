@@ -1,5 +1,4 @@
 ﻿using Core.Picareta.DomainObjects;
-using System;
 
 namespace Admin.Picareta.Entidades.Events.IntegrationEvents
 {
@@ -15,7 +14,5 @@ namespace Admin.Picareta.Entidades.Events.IntegrationEvents
         public string NomeModelo { get; private set; }
         public string Cor { get; private set; }
         public decimal Valor { get; private set; }
-
-        
     }
 }

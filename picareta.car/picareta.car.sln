@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Administracao", "1 - Ad
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5620B95D-B486-422F-9EFA-BA22AD84769F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin.Picareta", "Administracao\src\admin.picareta\Admin.Picareta.csproj", "{0ED0585A-0855-4BF4-88A4-E70CBB1553CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin.Picareta.Domain", "Administracao\src\admin.picareta\Admin.Picareta.Domain.csproj", "{0ED0585A-0855-4BF4-88A4-E70CBB1553CF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Core", "4 - Core", "{B4E9D375-0522-489B-BC95-6C190E40CDF8}"
 EndProject
@@ -24,6 +24,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{6C1DF60A-7727-407B-929E-F6EE76DB3311}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Apps", "0 - Apps", "{0E23702C-728A-43BA-B563-7AC1925A5641}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "admin.picareta.car", "Apps\src\admin.picareta.car\admin.picareta.car.csproj", "{C7BC2A93-5ECF-4AEA-BD4B-AA91F982E6BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplication", "Aplication", "{549E96FC-2405-4B0B-AF2C-67E643AA1ABF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin.Picareta.Application", "Administracao\src\Admin.Picareta.Application\Admin.Picareta.Application.csproj", "{E807826C-6214-4DFA-BA2F-28728B2210EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.Picareta.Data", "Administracao\src\Admin.Picareta.Data\Admin.Picareta.Data.csproj", "{BD9CB15B-0044-465F-8490-EA01E0A2FBD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +51,18 @@ Global
 		{4F545152-94BD-484D-9EED-D793689CAF2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F545152-94BD-484D-9EED-D793689CAF2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F545152-94BD-484D-9EED-D793689CAF2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7BC2A93-5ECF-4AEA-BD4B-AA91F982E6BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7BC2A93-5ECF-4AEA-BD4B-AA91F982E6BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7BC2A93-5ECF-4AEA-BD4B-AA91F982E6BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7BC2A93-5ECF-4AEA-BD4B-AA91F982E6BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E807826C-6214-4DFA-BA2F-28728B2210EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E807826C-6214-4DFA-BA2F-28728B2210EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E807826C-6214-4DFA-BA2F-28728B2210EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E807826C-6214-4DFA-BA2F-28728B2210EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD9CB15B-0044-465F-8490-EA01E0A2FBD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD9CB15B-0044-465F-8490-EA01E0A2FBD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD9CB15B-0044-465F-8490-EA01E0A2FBD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD9CB15B-0044-465F-8490-EA01E0A2FBD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +74,10 @@ Global
 		{57BCD28C-7ACB-4A54-A1D4-66802B4820ED} = {5620B95D-B486-422F-9EFA-BA22AD84769F}
 		{4F545152-94BD-484D-9EED-D793689CAF2D} = {57BCD28C-7ACB-4A54-A1D4-66802B4820ED}
 		{6C1DF60A-7727-407B-929E-F6EE76DB3311} = {DD940B26-1D69-4BF2-8321-A5C8DC385449}
+		{C7BC2A93-5ECF-4AEA-BD4B-AA91F982E6BD} = {0E23702C-728A-43BA-B563-7AC1925A5641}
+		{549E96FC-2405-4B0B-AF2C-67E643AA1ABF} = {DD940B26-1D69-4BF2-8321-A5C8DC385449}
+		{E807826C-6214-4DFA-BA2F-28728B2210EE} = {549E96FC-2405-4B0B-AF2C-67E643AA1ABF}
+		{BD9CB15B-0044-465F-8490-EA01E0A2FBD4} = {6C1DF60A-7727-407B-929E-F6EE76DB3311}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D345251D-7331-4C2F-9835-2090E37210B1}

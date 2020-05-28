@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\picareta.car\Administracao\src\admin.picareta\Admin.Picareta.csproj" />
+    <ProjectReference Include="..\..\picareta.car\Administracao\src\admin.picareta\Admin.Picareta.Domain.csproj" />
   </ItemGroup>
 
 </Project>

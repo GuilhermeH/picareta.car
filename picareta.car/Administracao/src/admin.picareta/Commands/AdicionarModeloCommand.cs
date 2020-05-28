@@ -1,12 +1,11 @@
-﻿using Admin.Picareta.Entidades.Validators;
-using Core.picareta.DomainObjects;
+﻿using Admin.Picareta.Domain.Commands.Validators;
 using Core.Picareta.DomainObjects;
 
-namespace Admin.Picareta.Entidades
+namespace Admin.Picareta.Domain.Commands
 {
-    public class Modelo : Entity, IAggregateRoot
+    public class AdicionarModeloCommand : Command
     {
-        public Modelo(string nome, decimal valorMinimo, decimal valorMaximo)
+        public AdicionarModeloCommand(string nome, decimal valorMinimo, decimal valorMaximo)
         {
             Nome = nome;
             ValorMinimo = valorMinimo;
@@ -19,7 +18,8 @@ namespace Admin.Picareta.Entidades
 
         public override bool IsValid()
         {
-            ValidationResult = new ModeloValidator().Validate(this);
+            ValidationResult = new AdicionarModeloCommandValidator().Validate(this);
+
             return ValidationResult.IsValid;
         }
     }
